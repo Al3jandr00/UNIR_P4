@@ -28,7 +28,7 @@ def create_task(body: Annotated[dict, Body()], manager: TaskManagerDep) -> dict:
     try:
         return manager.create(body).to_dict()
     except ValueError as e:
-        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(e))
 
 
 @router.put("/{task_id}", status_code=status.HTTP_200_OK)
@@ -36,7 +36,7 @@ def update_task(task_id: str, body: Annotated[dict, Body()], manager: TaskManage
     try:
         task = manager.update(task_id, body)
     except ValueError as e:
-        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(e))
     if task is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Tarea '{task_id}' no encontrada.")
     return task.to_dict()
