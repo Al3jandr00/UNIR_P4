@@ -89,11 +89,20 @@ permitir un contenedor único sin dependencias de infraestructura adicionales.
 - [x] Mantener `tests/test_task.py` — tests unitarios del modelo de dominio
 - [x] Verificar **50/50 tests pasando** en 0.27s
 
-### Fase 6 — Documentación ✅
+### Fase 6 — Publicación en GitHub y Docker Hub ✅
 
-- [x] Actualizar `README.md` con instrucciones completas de uso con Docker
-- [x] Crear `plan.md` (este fichero) con la planificación y seguimiento
-- [x] Crear `memoria_tecnica.md` con la narrativa técnica para el examinador
+- [x] Crear repositorio público en GitHub: https://github.com/Al3jandr00/UNIR_P4
+- [x] Configurar secretos `DOCKERHUB_USERNAME` y `DOCKERHUB_TOKEN` en GitHub
+- [x] Push inicial → pipeline Run #1 detectó error de compatibilidad de Starlette
+- [x] Fix: `HTTP_422_UNPROCESSABLE_CONTENT` → `HTTP_422_UNPROCESSABLE_ENTITY` (estándar compatible)
+- [x] Push del fix → pipeline Run #2 completado ✅ (50/50 tests + imagen publicada)
+- [x] Imagen disponible en Docker Hub: `alejandrofral/task-manager-api:latest`
+
+### Fase 7 — Documentación ✅
+
+- [x] Actualizar `README.md` con URLs reales (GitHub + Docker Hub)
+- [x] Crear `plan.md` (este fichero) con la planificación y seguimiento completo
+- [x] Crear `memoria_tecnica.md` con la narrativa técnica completa para el examinador
 
 ---
 
@@ -104,7 +113,7 @@ permitir un contenedor único sin dependencias de infraestructura adicionales.
 | Creación del Dockerfile | Imagen base Python, `requirements.txt`, puerto expuesto, comando de ejecución | ✅ |
 | Configuración del pipeline | Etapas de build, test y push claramente definidas | ✅ |
 | Automatización de pruebas | `pytest` ejecutado dentro del pipeline antes del build | ✅ |
-| Subida al registro | Imagen publicada en Docker Hub con tags `latest` y SHA | ✅ |
+| Subida al registro | Imagen publicada en Docker Hub (`alejandrofral/task-manager-api`) | ✅ |
 | Documentación en README.md | Instrucciones claras de ejecución con Docker | ✅ |
 
 ---

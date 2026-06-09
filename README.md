@@ -261,7 +261,7 @@ Los tests cubren:
 Una vez ejecutado el pipeline con éxito, la imagen estará disponible en:
 
 ```bash
-docker pull <DOCKERHUB_USERNAME>/task-manager-api:latest
+docker pull alejandrofral/task-manager-api:latest
 ```
 
 Para desplegarla en cualquier entorno:
@@ -269,7 +269,7 @@ Para desplegarla en cualquier entorno:
 ```bash
 docker run -d -p 8000:8000 \
   -e OPENAI_API_KEY=sk-... \
-  <DOCKERHUB_USERNAME>/task-manager-api:latest
+  alejandrofral/task-manager-api:latest
 ```
 
 ---
